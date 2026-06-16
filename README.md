@@ -1,4 +1,4 @@
-# Advanced Smart Calculator
+# Smart Calculator
 
 A modern desktop calculator application built using Python and Tkinter.
 
