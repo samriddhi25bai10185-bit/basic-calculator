@@ -13,8 +13,28 @@ display = tk.Entry(
 
 display.pack(fill="both", padx=10, pady=10)
 
+
+def calculate():
+    expression = display.get()
+
+    try:
+        result = eval(expression)
+
+        display.delete(0, tk.END)
+        display.insert(tk.END, result)
+
+    except:
+        display.delete(0, tk.END)
+        display.insert(tk.END, "Error")
+
+
 def click(value):
-    display.insert(tk.END, value)
+
+    if value == "=":
+        calculate()
+    else:
+        display.insert(tk.END, value)
+
 
 button_frame = tk.Frame(root)
 button_frame.pack()
