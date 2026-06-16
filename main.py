@@ -4,14 +4,20 @@ root = tk.Tk()
 
 root.title("Basic Calculator")
 root.geometry("350x500")
+root.resizable(False, False)
 
 display = tk.Entry(
     root,
     font=("Arial", 24),
-    justify="right"
+    justify="right",
+    bd=5
 )
 
 display.pack(fill="both", padx=10, pady=10)
+
+
+def clear():
+    display.delete(0, tk.END)
 
 
 def calculate():
@@ -34,6 +40,17 @@ def click(value):
         calculate()
     else:
         display.insert(tk.END, value)
+
+
+clear_button = tk.Button(
+    root,
+    text="C",
+    font=("Arial", 18),
+    height=2,
+    command=clear
+)
+
+clear_button.pack(fill="x", padx=10, pady=(0, 10))
 
 
 button_frame = tk.Frame(root)
