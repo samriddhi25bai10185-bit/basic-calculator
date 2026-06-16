@@ -13,6 +13,9 @@ display = tk.Entry(
 
 display.pack(fill="both", padx=10, pady=10)
 
+def click(value):
+    display.insert(tk.END, value)
+
 button_frame = tk.Frame(root)
 button_frame.pack()
 
@@ -33,7 +36,8 @@ for button in buttons:
         text=button,
         width=5,
         height=2,
-        font=("Arial", 18)
+        font=("Arial", 18),
+        command=lambda b=button: click(b)
     )
 
     btn.grid(
