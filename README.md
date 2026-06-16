@@ -1,4 +1,4 @@
-# Smart Calculator
+# Basic Calculator
 
 A modern desktop calculator application built using Python and Tkinter.
 
